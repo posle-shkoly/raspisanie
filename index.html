@@ -93,13 +93,47 @@ main .wrap{padding-block:14px 24px}
 .dayttl{font-size:13px;color:var(--muted);margin:0 0 8px;font-weight:500}
 .hol-note{font-size:13px;padding:8px 10px;border-radius:9px;background:var(--warn-bg);color:var(--warn);margin-bottom:8px}
 .list{display:flex;flex-direction:column;gap:8px}
-.kpi{display:flex;flex-direction:column;gap:12px}
-.kcard{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:14px;display:flex;flex-direction:column;gap:8px}
-.kcard p{margin:0;font-size:14px;color:var(--muted)}
-.kcard h3{margin:0;font-size:16px}
-.kcard .btn{align-self:flex-start;text-decoration:none;display:inline-block}
-.kdue{font-size:14px}
-.kdue b{font-variant-numeric:tabular-nums}
+/* премия */
+.bctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:-2px 0 12px}
+.bctl select{font-size:14px;padding:8px 10px;border-radius:9px;border:1px solid var(--line);background:var(--surface)}
+.bctl .sp{flex:1}
+.bname{margin:4px 0 10px;font-family:var(--f-display);font-size:18px}
+.bover{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;margin-bottom:16px}
+.bo{display:flex;flex-direction:column;gap:2px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.bo.cur{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.bo .n{font-weight:600}.bo .v{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}.bo .v b{color:var(--ink)}
+.btable{display:flex;flex-direction:column;gap:6px}
+.bh,.br{display:grid;grid-template-columns:minmax(78px,1fr) minmax(96px,1.3fr) minmax(70px,1fr) minmax(92px,1.2fr);gap:10px;align-items:center}
+.bh{font-size:12px;color:var(--muted);padding:0 12px}
+.br{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-align:left;font-size:14px;font-variant-numeric:tabular-nums}
+.br:disabled{cursor:default;opacity:.75}
+.br.cur{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.br.total{background:var(--sunk);font-weight:600}
+.br .m{font-weight:600}.br .v{white-space:nowrap}.br .mut,.mut{color:var(--muted)}
+.br .v{display:flex;flex-direction:column;gap:2px}
+.bbar{display:inline-block;vertical-align:middle;width:46px;height:8px;background:var(--sunk);border-radius:4px;overflow:hidden;margin-right:8px}
+.bbar i{display:block;height:100%;background:var(--accent)}
+.bst{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--sunk);color:var(--muted);width:max-content}
+.bst.ok{background:var(--ok-bg);color:var(--ok)}.bst.warn{background:var(--warn-bg);color:var(--warn)}.bst.bad{background:var(--bad-bg);color:var(--bad)}
+.bnote{font-size:12.5px;color:var(--muted);margin:8px 2px 0}
+.bgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-bottom:12px}
+.bcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
+.bhd{display:flex;justify-content:space-between;gap:10px;align-items:baseline}.bhd h3{margin:0;font-size:15.5px}
+.bled{display:flex;flex-direction:column;font-size:13.5px}
+.bled>div{display:grid;grid-template-columns:1fr auto auto;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}
+.bled>div:last-child{border-bottom:0}.bled i{font-style:normal;color:var(--muted);font-size:12px}
+.bled b{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;min-width:42px}
+.bled .mut{text-align:right;overflow-wrap:anywhere}
+.bsub{border-top:1px dashed var(--line);padding-top:10px;display:flex;flex-direction:column;gap:10px}
+.bsub .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
+.bfields{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.bfields .fld input,.bfields .fld select{padding:9px 10px;font-size:14px}
+.chk{display:flex;gap:8px;align-items:center;font-size:13.5px}
+.bcard details summary{cursor:pointer;font-size:13px;color:var(--muted);margin-bottom:8px}
+.bcalc{background:var(--sunk);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;font-size:14px;margin-top:12px}
+.bcalc b{font-variant-numeric:tabular-nums}
+.warnline{color:var(--warn);font-size:13px}
+@media (max-width:520px){.bh,.br{grid-template-columns:70px 1fr 1fr;}.bh span:nth-child(3),.br>span:nth-child(3){display:none}}
 .empty{color:var(--muted);font-size:14px;padding:22px 12px;text-align:center;background:var(--surface);border-radius:12px;border:1px dashed var(--line)}
 
 /* lesson card — как в CRM: группа, время, метки филиала, дисциплины и педагога */
@@ -439,7 +473,7 @@ header.top .out:hover{background:#1449BD}
   </section>
   <section class="view" id="v-checks" hidden><div id="checks"></div></section>
   <section class="view" id="v-requests" hidden><div id="requests"></div></section>
-  <section class="view" id="v-kpi" hidden><div id="kpi"></div></section>
+  <section class="view" id="v-bonus" hidden><div id="bonus"></div></section>
 </div></main>
 
 <nav class="bottom" role="tablist" id="bottomnav"></nav>
@@ -453,7 +487,7 @@ header.top .out:hover{background:#1449BD}
 /* ============ НАСТРОЙКА ============
    Вставьте сюда ссылку на веб-приложение скрипта (заканчивается на /exec):
    Apps Script → Развернуть → Новое развёртывание → Веб-приложение. */
-const PAGE_VERSION = "2026-10-26.9";
+const PAGE_VERSION = "2026-11-11.1";
 const API_URL = (/^https:\/\//.test(String(window.PS_API_URL||"").trim()) ? String(window.PS_API_URL).trim() : "__API_URL__");
 /* =================================== */
 const DEMO = !API_URL || API_URL.startsWith('__');
@@ -512,6 +546,28 @@ async function api(action,p={}){
   if(!j.ok){if(j.error==='Нужно войти'){logout(true)}throw new Error(j.error||'Ошибка')}
   return j;
 }
+/* демо-режим премии: вымышленные цифры */
+const DEMO_K={map:{'Филипп Попов':1,'Анна Ленина':2},pmax:{'1':7000,'2':8500,'3':10000},crm:{},g:{},t:{}};
+['2026-09','2026-10','2026-11'].forEach((m,i)=>{DEMO_K.crm[m]={month:m,generatedAt:'демо',teachers:[{id:1,name:'Филипп Попов'},{id:2,name:'Анна Ленина'}],
+  groups:[{id:11,name:'Пример: STAR 7–8 лет',teacherId:1,maxStudents:15,start:i?10:0,end:11,stayed:i?10:0,planned:80,presences:70-i*4,trialsCame:3-i,trialsBought:2-i>0?2-i:0},
+  {id:12,name:'Пример: PRO от 12 лет',teacherId:1,maxStudents:15,start:i?13:0,end:13,stayed:i?12:0,planned:100,presences:88,trialsCame:1,trialsBought:1},
+  {id:21,name:'Пример: KINDER 4–6 лет',teacherId:2,maxStudents:12,start:i?7:0,end:8,stayed:i?7:0,planned:60,presences:50,trialsCame:2,trialsBought:1}]};
+  DEMO_K.g[m]={11:{videos:2,program:100,posts:5,open:i===1?1:0,parentAvg:4.7,parentResp:60,confirmed:i<2},12:{videos:1,program:100,posts:3,parentAvg:4.5,parentResp:50,confirmed:i<2},21:{videos:2,program:95,posts:4,parentAvg:4.8,parentResp:70,confirmed:i<2}};
+  DEMO_K.t[m]={1:{report:'ontime',dev:true,devNote:'Семинар по речи'},2:{report:i===2?undefined:'ontime'}}});
+function demoKpi(action,p,u,admin){
+  if(action==='kpiSave'){const k=p.kind==='t'?'t':'g';const o=(DEMO_K[k][p.month]=DEMO_K[k][p.month]||{});const cur=(o[p.id]=o[p.id]||{});
+    if(!admin&&cur.confirmed)throw new Error('Руководитель уже проверил этот месяц — правки через него');
+    Object.entries(p.data).forEach(([f,v])=>{if(v==null)delete cur[f];else cur[f]=v})}
+  if(action==='kpiConfig'){if(p.cfg.map)DEMO_K.map=p.cfg.map;if(p.cfg.pmax)DEMO_K.pmax=p.cfg.pmax}
+  if(action==='kpiKey')return {hasKey:true};
+  const me=admin?null:DEMO_K.map[u.name]||null;
+  if(!admin&&!me)return {kpi:{none:true}};
+  const months=Object.keys(DEMO_K.crm).sort().map(m=>{const c=DEMO_K.crm[m];return {month:m,generatedAt:c.generatedAt,groups:c.groups.filter(g=>admin||g.teacherId===me),teachers:c.teachers.filter(t=>admin||t.id===me)}});
+  const g={},t={};months.forEach(md=>{g[md.month]={};md.groups.forEach(x=>{if(DEMO_K.g[md.month][x.id])g[md.month][x.id]=DEMO_K.g[md.month][x.id]});t[md.month]={};Object.entries(DEMO_K.t[md.month]||{}).forEach(([id,v])=>{if(admin||+id===me)t[md.month][id]=v})});
+  const kpi={months,g,t,pmax:DEMO_K.pmax,me};
+  if(admin)Object.assign(kpi,{map:DEMO_K.map,siteTeachers:uniq(SNAPSHOT.l.map(a=>a[6])).sort((a,b)=>a.localeCompare(b,'ru')),hasKey:false,lastSync:''});
+  return action==='kpiSync'?{kpi,synced:months.map(x=>({month:x.month}))}:{kpi};
+}
 /* демо-режим: работает на копии расписания, без записи в таблицу */
 const DEMO_DB={lessons:SNAPSHOT.l.map((a,i)=>[String(i+1),...a]),requests:[],conf:{}};
 function demoApi(action,p){
@@ -526,7 +582,8 @@ function demoApi(action,p){
       lessons:DEMO_DB.lessons.filter(l=>admin||l[7]===u.name).map(l=>[l[0],l[1],l[2],l[3],l[4],l[5],l[6],l[7],l[8]||'']),
       branches:SNAPSHOT.b,types:SNAPSHOT.ty,groups:admin?SNAPSHOT.g:[],holidays:SNAPSHOT.h,colors:null,
       refs:admin?{groups:GO,dis:Object.keys(COLS.dis),teachers:people.slice(1).map(x=>x.name),branches:SNAPSHOT.b.map(b=>b.br)}:null,
-      conf:{...DEMO_DB.conf},requests:DEMO_DB.requests.filter(q=>admin||q.t===u.name).slice().reverse()};
+      conf:{...DEMO_DB.conf},requests:DEMO_DB.requests.filter(q=>admin||q.t===u.name).slice().reverse(),bonus:admin||!!DEMO_K.map[u.name]};
+    if(action.startsWith('kpi'))return demoKpi(action,p,u,admin);
     if(action==='unconfirm'){delete DEMO_DB.conf[String(p.id)];return {}}
     if(action==='mark'){if(!admin)throw new Error('Только для администратора');p.ids.forEach(i=>{if(p.answer==='clear')delete DEMO_DB.conf[String(i)];else DEMO_DB.conf[String(i)]=p.answer});return {}}
     if(action==='confirm'){p.ids.forEach(i=>{const l=DEMO_DB.lessons.find(x=>x[0]===String(i));if(!l)throw new Error('Занятие не найдено');if(!admin&&l[7]!==u.name)throw new Error('Это не ваше занятие');DEMO_DB.conf[l[0]]='yes'});return {n:p.ids.length}}
@@ -546,6 +603,7 @@ function demoApi(action,p){
 let DB,L=[],ISSUES=[],REQS=[],REFS=null,CONF={},LASTJ=null;
 function ingest(j){
   LASTJ=j;checkVersion(j);
+  if(SESSION&&!!j.bonus!==BONUS){BONUS=!!j.bonus;buildTabs()}
   if(j.colors){(j.colors.dis||[]).forEach(x=>{if(okc(x.c))CM.dis[x.v]=x.c});(j.colors.t||[]).forEach(x=>{if(okc(x.c))CM.t[x.v]=x.c})}
   (j.branches||[]).forEach(b=>{if(okc(b.c))CM.br[b.br]=b.c});
   REQS=j.requests||[];REFS=j.refs;CONF=j.conf||{};
@@ -591,17 +649,14 @@ const ICON={
  teachers:'<path d="M4 20V11M10 20V5M16 20v-6M22 20H2"/>',
  checks:'<path d="M12 3 2.5 19.5h19Z"/><path d="M12 10v4.5M12 17.2v.1"/>',
  requests:'<path d="M4 5h16v11H9l-5 4Z"/><path d="M8 9.5h8M8 12.5h5"/>',
- kpi:'<circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 21l5-2.6 5 2.6-1.5-7.5"/>'};
+ bonus:'<circle cx="12" cy="9" r="5.5"/><path d="M8.5 13.5 7 21l5-2.6 5 2.6-1.5-7.5"/>'};
 const TABS={teacher:[['next','Главная'],['week','Неделя'],['month','Месяц'],['load','Нагрузка'],['requests','Запросы']],
             admin:[['week','Неделя'],['month','Месяц'],['groups','Группы'],['teachers','Педагоги'],['checks','Проверки'],['requests','Запросы']]};
-const ALLV=['next','week','month','load','groups','teachers','checks','requests','kpi'];
-/* KPI: ссылки на страницу расчёта из config.js (window.PS_KPI) */
-const KPI=window.PS_KPI&&window.PS_KPI.url?window.PS_KPI:null;
-const kpiId=n=>KPI&&KPI.teachers&&Object.prototype.hasOwnProperty.call(KPI.teachers,n)?KPI.teachers[n]:null;
-const kpiLink=id=>KPI.url.split('#')[0]+(id!=null?'#teacher-'+id:'');
+const ALLV=['next','week','month','load','groups','teachers','checks','requests','bonus'];
+let BONUS=false;
 function tabsFor(){
   const t=TABS[SESSION.role].slice();
-  if(KPI&&(isAdmin()||kpiId(SESSION.name)!=null))t.push(['kpi','KPI']);
+  if(isAdmin()||BONUS)t.push(['bonus','Премия']);
   return t;
 }
 const S={view:null,br:'',g:'',t:'',week:null,day:null,month:null,mday:null,rqf:'new'};
@@ -612,7 +667,7 @@ function buildTabs(){
   $('toptabs').innerHTML=tabs.map(([v,n])=>`<button role="tab" data-v="${v}">${n}${badge(v)}</button>`).join('');
   $('bottomnav').style.gridTemplateColumns=`repeat(${tabs.length},1fr)`;
   $('bottomnav').innerHTML=tabs.map(([v,n])=>`<button role="tab" data-v="${v}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${ICON[v]}</svg>${n}${badge(v)}</button>`).join('');
-  document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{S.view=b.dataset.v;render();scrollTo(0,0)});
+  document.querySelectorAll('[data-v]').forEach(b=>b.onclick=()=>{if(b.dataset.v==='bonus')KP=null;S.view=b.dataset.v;render();scrollTo(0,0)});
 }
 function updateBadges(){
   const nb=ISSUES.filter(i=>i.lvl==='bad').length||ISSUES.length;
@@ -769,38 +824,244 @@ function renderRequests(){
     ${admin?`<div class="ctl"><select aria-label="Статус">${['Новый','В работе','Решено'].map(s=>`<option${s===q.status?' selected':''}>${s}</option>`).join('')}</select><textarea placeholder="Ответ педагогу, например: замена — Марина">${esc(q.answer)}</textarea><button class="btn sm" data-save-rq="${esc(q.id)}">Сохранить</button></div>${q.lid?`<div><button class="btn ghost sm" data-open="${esc(q.lid)}">Открыть занятие</button></div>`:''}`:''}
   </div>`).join(''):`<div class="empty">${empty}</div>`}</div>`;
 }
-function kpiDue(){
-  const t=new Date(),d=t.getDate();
-  const due=d<=3?new Date(t.getFullYear(),t.getMonth(),3):new Date(t.getFullYear(),t.getMonth()+1,3);
-  const rep=new Date(due.getFullYear(),due.getMonth()-1,1);
-  const left=Math.round((new Date(due.getFullYear(),due.getMonth(),due.getDate())-new Date(t.getFullYear(),t.getMonth(),t.getDate()))/864e5);
-  return `Данные за ${MNOM[rep.getMonth()].toLowerCase()} — до <b>3 ${['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'][due.getMonth()]}</b>${left===0?', сегодня последний день':left<=7?`, осталось ${left} ${plural(left,'день','дня','дней')}`:''}.`;
-}
-function renderKpi(){
-  const box=$('kpi');
-  if(!KPI){box.innerHTML='<div class="empty">Страница KPI не подключена.</div>';return}
-  const note='<p>Откроется на claude.ai. Войдите в аккаунт, которому открыт доступ к странице KPI.</p>';
-  if(!isAdmin()){
-    const id=kpiId(SESSION.name);
-    box.innerHTML=`<div class="kpi"><div class="sechead"><h2>Мой KPI</h2><span>баллы и премия за месяц</span></div>
-      <div class="kcard"><h3>Расчёт по моим группам</h3>
-        <p>Удержание, посещаемость и пробные занятия подтягиваются из CRM. Вы вносите видео, мероприятия, прохождение программы и посты в чатах групп.</p>
-        <div class="kdue">${kpiDue()}</div>
-        <a class="btn" href="${esc(kpiLink(id))}" target="_blank" rel="noopener">Открыть мой KPI</a>${note}</div></div>`;
-    return;
+/* ---------- премия педагогов по актёрскому мастерству ----------
+   Данные — с листа «Премия (данные)» через скрипт; баллы и сумма считаются здесь, по регламенту. */
+let KP=null,KPBUSY=false;const KS={sem:null,t:null,m:null};
+const K_PMAX={'1':7000,'2':8500,'3':10000};
+const kfmt=n=>(Math.round(n*10)/10).toLocaleString('ru-RU');
+const kmoney=n=>Math.round(n).toLocaleString('ru-RU')+' ₽';
+const kpct=(a,b)=>b>0?a/b*100:null;
+const kMonthName=m=>MNOM[+m.slice(5)-1];
+/* полугодие: сентябрь–декабрь и январь–май; ключ — первый месяц */
+const kSemOf=m=>{const y=+m.slice(0,4),mo=+m.slice(5);return mo>=9?`${y}-09`:mo<=5?`${y}-01`:null};
+const kSemMonths=s=>{const y=s.slice(0,4);return s.endsWith('-09')?['09','10','11','12'].map(x=>`${y}-${x}`):['01','02','03','04','05'].map(x=>`${y}-${x}`)};
+const kSemLabel=s=>s.endsWith('-09')?`Сентябрь–декабрь ${s.slice(0,4)}`:`Январь–май ${s.slice(0,4)}`;
+function kv(crm,man,k){const o=(man.ov||{})[k];return o!==undefined&&o!==null&&o!==''?+o:(crm[k]??0)}
+
+function kScoreGroup(crm,man,month){
+  const mon=+month.slice(5),rec=mon===9||mon===1;
+  const start=kv(crm,man,'start'),end=kv(crm,man,'end'),stayed=kv(crm,man,'stayed'),cap=kv(crm,man,'maxStudents');
+  const planned=kv(crm,man,'planned'),pres=kv(crm,man,'presences'),tc=kv(crm,man,'trialsCame'),tb=kv(crm,man,'trialsBought');
+  const rows=[];const add=(name,val,p,max,note)=>rows.push({name,val,p,max,note});
+  if(man.midMonth){add('Удержание','группу взяли в середине месяца',15,15);add('Прирост','не считается',10,10)}
+  else{
+    const R=kpct(stayed,start);
+    add('Удержание',R===null?'в начале месяца никого':`${stayed} из ${start} · ${kfmt(R)}%`,R===null?15:R>=95?15:R>=90?10:R>=85?5:0,15);
+    const G=kpct(end-start,start),full=cap>0&&end>=cap&&stayed===start;
+    let g2;if(full)g2=10;else if(G===null)g2=end>0?10:0;else g2=rec?(G>=15?10:G>=10?7:G>=5?4:0):(G>=5?10:G>=3?7:G>0?4:0);
+    add('Прирост',G===null?`${end} учеников`:`${start} → ${end} · ${G>0?'+':''}${kfmt(G)}%`+(rec?' (месяц набора)':''),g2,10,full?'группа заполнена':'');
   }
-  const names=Object.keys(KPI.teachers||{}).sort((a,b)=>a.localeCompare(b,'ru'));
-  box.innerHTML=`<div class="kpi"><div class="sechead"><h2>KPI педагогов</h2><span>актёрское мастерство</span></div>
-    <div class="kcard"><h3>Все педагоги</h3><p>Сводка, проверка данных, загрузка выгрузки из CRM и настройки.</p>
-      <a class="btn" href="${esc(kpiLink(null))}" target="_blank" rel="noopener">Открыть страницу KPI</a></div>
-    ${names.length?names.map(n=>`<div class="kcard"><h3>${esc(n)}</h3><a class="btn ghost" href="${esc(kpiLink(KPI.teachers[n]))}" target="_blank" rel="noopener">Открыть KPI педагога</a></div>`).join(''):'<div class="empty">Педагоги не добавлены. Скопируйте блок «Ссылки для сайта» из настроек страницы KPI в config.js.</div>'}
-    <div class="kdue">${kpiDue()}</div></div>`;
+  const P=kpct(pres,planned);
+  add('Посещаемость',P===null?'нет занятий':`${pres} из ${planned} · ${kfmt(P)}%`,P===null?0:P>=85?10:P>=75?6:P>=65?3:0,10);
+  const K=kpct(tb,tc);
+  add('Пробные',tc?`купили ${tb} из ${tc}`:'пробных не было',tc?(K>=60?5:K>=40?3:0):3,5);
+  const vid=+man.videos||0;add('Видео',man.videos==null?'не указано':`${vid}`,vid>=2?5:vid===1?2:0,5);
+  const ev=(+man.open||0)*5+(+man.shows||0)*10+(+man.contests||0)*10+(+man.prizes||0)*5;
+  add('Мероприятия',[man.open?`откр. урок ×${man.open}`:'',man.shows?`показ ×${man.shows}`:'',man.contests?`конкурс ×${man.contests}`:'',man.prizes?`призы ×${man.prizes}`:''].filter(Boolean).join(', ')||'нет',Math.min(15,ev),15);
+  const prog=man.program==null?null:+man.program;
+  add('Программа',prog===null?'не указано':prog+'%',prog===null?0:prog>=100?5:prog>=90?3:0,5);
+  const pa=man.parentAvg==null?null:+man.parentAvg,pr=+man.parentResp||0;
+  let g8=pa===null?0:pa>=4.7?10:pa>=4.5?7:pa>=4?4:0;if(pa!==null&&pr<30)g8=Math.min(g8,5);
+  add('Оценка родителей',pa===null?'ждёт анкеты':`${String(pa).replace('.',',')} · ответили ${pr}%`,g8,10,pa!==null&&pr<30?'меньше 30% ответов':'');
+  const posts=+man.posts||0;add('Чат с родителями',man.posts==null?'не указано':`${posts} пост.`,posts>=4?5:posts>=2?2:0,5);
+  const total=rows.reduce((s,r)=>s+r.p,0);
+  const missing=[];if(prog===null)missing.push('программа');if(man.videos==null)missing.push('видео');if(man.posts==null)missing.push('посты');if(pa===null)missing.push('анкета');
+  let sem=null;
+  if(mon===12||mon===5){
+    const sEv=+man.semEvents||0,s0=kv(crm,man,'semStart'),s1=kv(crm,man,'semStayed'),SR=kpct(s1,s0);
+    const e=sEv>=3?8:(sEv>=2&&man.semShow)?5:0,r=SR!==null&&SR>=85?4:0,g=man.semGrowth?3:0;
+    sem={total:e+r+g,rows:[{name:'Мероприятия за полугодие',val:`${sEv}${man.semShow?', есть показ':''}`,p:e,max:8},{name:'Удержание за полугодие',val:SR===null?'нет данных':`${s1} из ${s0} · ${kfmt(SR)}%`,p:r,max:4},{name:'Рост учеников',val:man.semGrowth?'у 70% и больше':'нет',p:g,max:3}]};
+  }
+  return {rows,total,n:end,missing,sem,confirmed:!!man.confirmed};
 }
+function kScoreTeacher(tid,month){
+  const md=KP.months.find(x=>x.month===month);if(!md)return null;
+  const gm=KP.g[month]||{},T=(KP.t[month]||{})[tid]||{};
+  const res=md.groups.filter(g=>g.teacherId===tid).map(g=>({g,man:gm[g.id]||{},s:kScoreGroup(g,gm[g.id]||{},month)}));
+  if(!res.length)return null;
+  const N=res.reduce((a,x)=>a+x.s.n,0);
+  const wavg=f=>N>0?res.reduce((a,x)=>a+f(x.s)*x.s.n,0)/N:res.reduce((a,x)=>a+f(x.s),0)/res.length;
+  const grp=wavg(s=>s.total),sem=res.some(x=>x.s.sem)?wavg(s=>s.sem?s.sem.total:0):0;
+  const l1=T.report==='ontime'?10:T.report==='late'?5:0,l2=(+T.complaints||0)===0?5:0,l3=T.dev?5:0,pers=l1+l2+l3,penalty=(+T.missed||0)*10;
+  const B=Math.max(0,Math.min(100,Math.round(grp+pers+sem-penalty)));
+  const weak=res.some(x=>x.s.total<40),cnt=Math.min(3,Math.max(1,res.length));
+  const pmax=+((KP.pmax||K_PMAX)[cnt])||K_PMAX[cnt];
+  let prem=0,why='';
+  if(T.sick)why='болезнь больше половины месяца';
+  else if(T.isNew){prem=T.report&&T.report!=='missing'?5000:0;why='первый месяц — фиксированно'}
+  else if(B>=60){prem=5000+(pmax-5000)*(B-60)/40;if(weak)prem*=0.9;prem=Math.floor(prem/100)*100}
+  else why='меньше 60 баллов';
+  const missing=res.flatMap(x=>x.s.missing.map(m=>`${x.g.name}: ${m}`));if(!T.report)missing.push('отчёт не отмечен');
+  return {res,N,grp,sem,l1,l2,l3,pers,penalty,B,weak,pmax,prem,why,missing,T,confirmed:res.every(x=>x.s.confirmed)};
+}
+/* полугодие по месяцам: план — максимум премии при этом числе групп, факт — расчёт */
+function kSemester(tid,sem){
+  const now=iso(new Date()).slice(0,7);
+  let lastCnt=0;
+  const rows=kSemMonths(sem).map(m=>{
+    const r=kScoreTeacher(tid,m);
+    if(r){lastCnt=Math.min(3,r.res.length);return {m,r,plan:r.pmax,fact:r.prem,state:m<now?(r.confirmed?'done':'check'):'now'}}
+    return {m,r:null,plan:m>=now&&lastCnt?(+(KP.pmax||K_PMAX)[lastCnt]||K_PMAX[lastCnt]):0,fact:0,state:m>now?'future':'none'};
+  });
+  const plan=rows.reduce((a,x)=>a+x.plan,0),fact=rows.reduce((a,x)=>a+x.fact,0);
+  const done=rows.filter(x=>x.r);const avgB=done.length?done.reduce((a,x)=>a+x.r.B,0)/done.length:0;
+  return {rows,plan,fact,avgB};
+}
+
+async function loadKpi(force){
+  if(KPBUSY)return;if(KP&&!force){renderBonus();return}
+  KPBUSY=true;$('bonus').innerHTML='<div class="loading">Загружаю премию…</div>';
+  try{const j=await api('kpi');KP=j.kpi}catch(e){$('bonus').innerHTML=`<div class="empty">${esc(e.message)}</div>`;KPBUSY=false;return}
+  KPBUSY=false;renderBonus();
+}
+function kTeachers(){ // [{id,name}] — у администратора все с премией, у педагога он сам
+  if(!KP)return[];
+  if(!isAdmin())return KP.me?[{id:KP.me,name:SESSION.name}]:[];
+  return Object.entries(KP.map||{}).map(([n,id])=>({id:+id,name:n})).sort((a,b)=>a.name.localeCompare(b.name,'ru'));
+}
+function renderBonus(){
+  const box=$('bonus');
+  if(!KP){loadKpi();return}
+  if(KP.none){box.innerHTML='<div class="empty">Премия для вас пока не настроена.</div>';return}
+  const admin=isAdmin(),ts=kTeachers(),months=KP.months.map(x=>x.month);
+  const sems=uniq(months.map(kSemOf).filter(Boolean)).sort();
+  const curSem=kSemOf(iso(new Date()).slice(0,7));if(curSem&&!sems.includes(curSem))sems.push(curSem);
+  if(!KS.sem||!sems.includes(KS.sem))KS.sem=sems.includes(curSem)?curSem:sems[sems.length-1];
+  if(!KS.t||!ts.some(t=>t.id===KS.t))KS.t=ts[0]?ts[0].id:null;
+  const semMonths=kSemMonths(KS.sem||curSem);
+  const withData=semMonths.filter(m=>months.includes(m)&&KS.t&&kScoreTeacher(KS.t,m));
+  if(!KS.m||!withData.includes(KS.m))KS.m=withData[withData.length-1]||null;
+  let h=`<div class="sechead"><h2>${admin?'Премия педагогов':'Моя премия'}</h2><span>актёрское мастерство</span></div>`;
+  h+=`<div class="bctl">${sems.length>1?`<select id="b-sem" aria-label="Полугодие">${sems.map(s=>`<option value="${s}"${s===KS.sem?' selected':''}>${kSemLabel(s)}</option>`).join('')}</select>`:`<b>${kSemLabel(KS.sem||curSem)}</b>`}
+    ${admin?`<span class="sp"></span><button class="btn sm ghost" id="b-sync">Обновить из CRM</button><button class="btn sm ghost" id="b-cfg">Настройки</button>`:''}</div>`;
+  if(admin&&!KP.hasKey)h+=`<div class="banner">Не задан ключ API «Мой класс». Откройте «Настройки», чтобы данные обновлялись сами каждый день.</div>`;
+  if(admin)h+=kAdminOverview(ts);
+  if(!KS.t){box.innerHTML=h+`<div class="empty">${admin?'Отметьте в «Настройках», кто из педагогов получает премию.':'Нет данных.'}</div>`;return}
+  const tname=(ts.find(t=>t.id===KS.t)||{}).name||'';
+  const S2=kSemester(KS.t,KS.sem);
+  h+=`${admin?`<h3 class="bname">${esc(tname)}</h3>`:''}
+    <div class="tiles"><div class="tile"><b>${kmoney(S2.fact)}</b><span>начислено за полугодие</span></div><div class="tile"><b>${kmoney(S2.plan)}</b><span>максимум (план)</span></div>
+    <div class="tile wide"><b>${S2.avgB?kfmt(S2.avgB)+' баллов в среднем':'баллов пока нет'}</b><span>премия начисляется от 60 баллов из 100</span></div></div>
+    <div class="btable"><div class="bh"><span>Месяц</span><span>Баллы</span><span>План</span><span>Факт</span></div>
+    ${S2.rows.map(x=>`<button class="br${x.m===KS.m?' cur':''}" data-bm="${x.m}"${x.r?'':' disabled'}><span class="m">${kMonthName(x.m)}</span>
+      <span>${x.r?`<i class="bbar"><i style="width:${x.r.B}%"></i></i><b>${x.r.B}</b>`:'<span class="mut">—</span>'}</span>
+      <span class="v">${x.plan?kmoney(x.plan):'—'}</span><span class="v"><b>${x.r?kmoney(x.fact):'—'}</b>${kState(x)}</span></button>`).join('')}
+    <div class="br total"><span class="m">Итого</span><span></span><span class="v">${kmoney(S2.plan)}</span><span class="v"><b>${kmoney(S2.fact)}</b></span></div></div>
+    <p class="bnote">План — наибольшая премия при вашем числе групп (100 баллов). Факт — расчёт по регламенту: 5 000 ₽ при 60 баллах и дальше пропорционально. Данные текущего месяца предварительные.</p>`;
+  if(KS.m)h+=kMonthDetail(KS.t,KS.m);
+  box.innerHTML=h;
+}
+function kState(x){
+  if(x.state==='done')return '<span class="bst ok">проверено</span>';
+  if(x.state==='check')return '<span class="bst">ждёт проверки</span>';
+  if(x.state==='now')return '<span class="bst warn">идёт</span>';
+  return '';
+}
+function kAdminOverview(ts){
+  if(!ts.length)return '';
+  const m=KS.m;
+  return `<div class="bover">${ts.map(t=>{const S2=kSemester(t.id,KS.sem);const r=m?kScoreTeacher(t.id,m):null;
+    return `<button class="bo${t.id===KS.t?' cur':''}" data-bt="${t.id}"><span class="n">${esc(t.name)}</span><span class="v">${r?`${kMonthName(m)}: <b>${r.B}</b> · ${kmoney(r.prem)}`:'—'}</span><span class="v">за полугодие <b>${kmoney(S2.fact)}</b></span></button>`}).join('')}</div>`;
+}
+const K_TF=[['videos','Видео с занятий'],['program','Пройдено программы, %'],['posts','Постов в чате группы'],['open','Открытых уроков'],['shows','Спектаклей, показов'],['contests','Конкурсов'],['prizes','Призовых мест']];
+function kInp(id,val,can,step){return `<input id="${id}" class="bin" inputmode="${step?'decimal':'numeric'}" autocomplete="off" value="${esc(val==null?'':String(val).replace('.',','))}"${can?'':' disabled'}>`}
+function kChk(id,val,can){return `<input id="${id}" type="checkbox"${val?' checked':''}${can?'':' disabled'}>`}
+function kMonthDetail(tid,m){
+  const r=kScoreTeacher(tid,m);if(!r)return '';
+  const admin=isAdmin(),T=r.T,tp=`bt|${m}|${tid}`;
+  let h=`<div class="sechead" style="margin-top:22px"><h2>${kMonthName(m)}</h2><span>${r.B} баллов · ${kmoney(r.prem)}</span></div><div class="bgroups">`;
+  for(const {g,man,s} of r.res){
+    const canT=!man.confirmed||admin,gp=`bg|${m}|${g.id}`;
+    h+=`<div class="bcard"><div class="bhd"><h3>${esc(g.name)}</h3><span class="bst ${s.total<40?'bad':s.total>=60?'ok':''}">${s.total} / 80</span></div>
+      <div class="bled">${s.rows.map(x=>`<div><span>${x.name}${x.note?` <i>${esc(x.note)}</i>`:''}</span><span class="mut">${esc(x.val)}</span><b>${x.p}<i>/${x.max}</i></b></div>`).join('')}</div>
+      <div class="bsub"><div class="lbl">${man.confirmed?'Проверено руководителем':'Вносит педагог'}</div><div class="bfields">
+      ${K_TF.map(([k,l])=>`<label class="fld">${l}${kInp(`${gp}|${k}`,man[k],canT)}</label>`).join('')}</div>
+      ${s.sem?`<div class="lbl">Полугодие: +${s.sem.total} из 15</div><div class="bfields"><label class="fld">Мероприятий за полугодие${kInp(`${gp}|semEvents`,man.semEvents,canT)}</label>
+        <label class="chk">${kChk(`${gp}|semShow`,man.semShow,canT)} Был сценический показ</label><label class="chk">${kChk(`${gp}|semGrowth`,man.semGrowth,canT)} Рост у 70% учеников по 2 критериям</label></div>`:''}
+      ${admin?`<div class="lbl">Вносит руководитель</div><div class="bfields"><label class="fld">Анкета: средняя оценка${kInp(`${gp}|parentAvg`,man.parentAvg,true,1)}</label><label class="fld">Ответили родителей, %${kInp(`${gp}|parentResp`,man.parentResp,true)}</label>
+        <label class="chk">${kChk(`${gp}|midMonth`,man.midMonth,true)} Группу взяли в середине месяца</label><label class="chk">${kChk(`${gp}|confirmed`,man.confirmed,true)} Данные группы проверены</label></div>
+        <details><summary>Поправить цифры из CRM</summary><div class="bfields">${[['start','На начало месяца'],['end','На конец месяца'],['stayed','Остались'],['planned','Записей на занятия'],['presences','Присутствий'],['trialsCame','Пришли на пробное'],['trialsBought','Купили после пробного']].map(([k,l])=>`<label class="fld">${l} (CRM: ${g[k]??'—'})${kInp(`${gp}|ov.${k}`,(man.ov||{})[k],true)}</label>`).join('')}</div></details>`:''}
+      </div></div>`;
+  }
+  h+=`</div><div class="bcard"><div class="bhd"><h3>Личные показатели</h3><span class="bst">${r.pers} / 20</span></div>
+    <div class="bled"><div><span>Отчёт за месяц</span><span class="mut">${{ontime:'вовремя',late:'с опозданием',missing:'не сдан'}[T.report]||'не отмечен'}</span><b>${r.l1}<i>/10</i></b></div>
+    <div><span>Нет жалоб</span><span class="mut">${+T.complaints||0} жалоб</span><b>${r.l2}<i>/5</i></b></div><div><span>Развитие и вклад</span><span class="mut">${esc(T.devNote||'—')}</span><b>${r.l3}<i>/5</i></b></div>
+    ${r.penalty?`<div><span>Сорванные занятия</span><span class="mut">${T.missed}</span><b>−${r.penalty}</b></div>`:''}</div>
+    <div class="bsub"><div class="bfields"><label class="fld" style="grid-column:1/-1">Развитие за месяц: курс, разработка, помощь студии<input id="${tp}|devNote" class="btxt" value="${esc(T.devNote||'')}" maxlength="300"${!r.confirmed||admin?'':' disabled'}></label>
+    ${admin?`<label class="fld">Отчёт<select id="${tp}|report">${[['','не отмечен'],['ontime','вовремя — 10'],['late','с опозданием — 5'],['missing','не сдан — 0']].map(([k,l])=>`<option value="${k}"${(T.report||'')===k?' selected':''}>${l}</option>`).join('')}</select></label>
+      <label class="fld">Обоснованных жалоб${kInp(`${tp}|complaints`,T.complaints,true)}</label><label class="fld">Сорвано занятий${kInp(`${tp}|missed`,T.missed,true)}</label>
+      <label class="chk">${kChk(`${tp}|dev`,T.dev,true)} Развитие засчитано</label><label class="chk">${kChk(`${tp}|isNew`,T.isNew,true)} Первый месяц работы</label><label class="chk">${kChk(`${tp}|sick`,T.sick,true)} Болел больше половины месяца</label>`:''}</div></div></div>`;
+  const parts=r.res.map(x=>`${x.s.total} × ${x.s.n}`).join(' + ');
+  h+=`<div class="bcalc"><div>Групповой балл: ${r.res.length>1?`(${parts}) / ${r.N} = `:''}<b>${kfmt(r.grp)}</b></div>
+    <div>Личные: <b>${r.pers}</b>${r.sem?` · полугодие: <b>+${kfmt(r.sem)}</b>`:''}${r.penalty?` · сорванные занятия: <b>−${r.penalty}</b>`:''}</div>
+    <div>Итог: <b>${r.B}</b> из 100${r.weak?' · есть группа ниже 40 баллов → × 0,9':''}</div>
+    <div>Премия: ${r.prem||!r.why?`5 000 + (${r.pmax.toLocaleString('ru-RU')} − 5 000) × (${r.B} − 60) / 40${r.weak?' × 0,9':''} = <b>${kmoney(r.prem)}</b>`:esc(r.why)+' — <b>0 ₽</b>'}</div>
+    ${r.missing.length?`<div class="warnline">Не хватает: ${esc(r.missing.join('; '))}</div>`:''}</div>`;
+  return h;
+}
+async function kSave(id,val){
+  const [kind,m,gid,field]=id.split('|');
+  const data={};
+  if(field.startsWith('ov.')){const cur={...((KP.g[m]||{})[gid]||{}).ov};const k=field.slice(3);if(val===''||val==null)delete cur[k];else cur[k]=val;data.ov=cur}
+  else data[field]=val===''?null:val;
+  try{const j=await api('kpiSave',{month:m,kind:kind==='bg'?'g':'t',id:+gid,data});KP=j.kpi;renderBonus();toast('Сохранено')}
+  catch(e){toast(e.message);renderBonus()}
+}
+async function kSync(){
+  const now=iso(new Date()).slice(0,7);
+  const ms=kSemMonths(KS.sem).filter(m=>m<=now);
+  const b=$('b-sync');if(b){b.disabled=true;b.textContent='Обновляю…'}
+  try{const j=await api('kpiSync',{months:ms});KP=j.kpi;renderBonus();toast(`Обновлено из CRM: ${j.synced.map(x=>kMonthName(x.month)).join(', ')}`)}
+  catch(e){toast(e.message);if(b){b.disabled=false;b.textContent='Обновить из CRM'}}
+}
+function kOpenCfg(){
+  const crm=new Map();KP.months.forEach(md=>md.teachers.forEach(t=>crm.set(t.id,t.name)));
+  const list=[...crm].sort((a,b)=>a[1].localeCompare(b[1],'ru'));
+  const pm=KP.pmax||K_PMAX;
+  openModal(`<h2>Настройки премии</h2>
+    <div class="sub">Кто из педагогов получает премию и кто он в «Мой класс». Остальные (танец, вокал) — без премии.</div>
+    ${(KP.siteTeachers||[]).map(n=>`<label class="fld">${esc(n)}<select data-map="${esc(n)}"><option value="">без премии</option>${list.map(([id,nm])=>`<option value="${id}"${+(KP.map||{})[n]===id?' selected':''}>${esc(nm)}</option>`).join('')}</select></label>`).join('')}
+    <div class="sub">Максимальная премия, ₽</div>
+    <div class="bfields">${['1','2','3'].map(k=>`<label class="fld">${k==='3'?'3 группы и больше':k==='1'?'1 группа':'2 группы'}<input data-pmax="${k}" inputmode="numeric" value="${pm[k]}"></label>`).join('')}</div>
+    <div class="row"><button class="btn ghost" data-close>Отмена</button><button class="btn" id="b-cfg-save">Сохранить</button></div>
+    <div class="sub" style="margin-top:8px">Ключ API «Мой класс» (Настройки → Интеграции → API). ${KP.hasKey?'Ключ уже сохранён; введите новый, чтобы заменить.':'Пока не задан.'} Хранится в настройках скрипта, в таблице его не видно.</div>
+    <label class="fld">Ключ API<input id="b-key" type="password" autocomplete="off" placeholder="${KP.hasKey?'••••••••':''}"></label>
+    <div class="row"><button class="btn ghost" id="b-key-save">Сохранить ключ</button></div>`);
+}
+async function kSaveCfg(){
+  const map={};document.querySelectorAll('[data-map]').forEach(s=>{if(s.value)map[s.dataset.map]=+s.value});
+  const pmax={};document.querySelectorAll('[data-pmax]').forEach(i=>pmax[i.dataset.pmax]=+String(i.value).replace(/\s/g,''));
+  try{const j=await api('kpiConfig',{cfg:{map,pmax}});KP=j.kpi;closeModal();renderBonus();toast('Настройки сохранены')}catch(e){toast(e.message)}
+}
+async function kSaveKey(){
+  const v=$('b-key').value.trim();if(!v){toast('Вставьте ключ');return}
+  const b=$('b-key-save');b.disabled=true;b.textContent='Проверяю ключ…';
+  try{await api('kpiKey',{key:v});closeModal();toast('Ключ сохранён, данные будут обновляться каждый день');loadKpi(true)}
+  catch(e){toast(e.message);b.disabled=false;b.textContent='Сохранить ключ'}
+}
+document.addEventListener('change',e=>{
+  const t=e.target;if(!t.id)return;
+  if(t.id==='b-sem'){KS.sem=t.value;KS.m=null;renderBonus();return}
+  if(!/^b[gt]\|/.test(t.id))return;
+  let val;
+  if(t.type==='checkbox')val=t.checked||null;
+  else if(t.classList.contains('bin')){const raw=t.value.trim().replace(',','.');if(raw===''){val=''}else{const n=parseFloat(raw);if(!isFinite(n)||n<0){toast('Нужно число');return}val=n}}
+  else val=t.value;
+  kSave(t.id,val);
+});
+document.addEventListener('click',e=>{
+  const bm=e.target.closest('[data-bm]');if(bm){KS.m=bm.dataset.bm;renderBonus();return}
+  const bt=e.target.closest('[data-bt]');if(bt){KS.t=+bt.dataset.bt;renderBonus();return}
+  if(e.target.id==='b-sync'){kSync();return}
+  if(e.target.id==='b-cfg'){kOpenCfg();return}
+  if(e.target.id==='b-cfg-save'){kSaveCfg();return}
+  if(e.target.id==='b-key-save'){kSaveKey();return}
+});
 function render(){
   ALLV.forEach(v=>$('v-'+v).hidden=v!==S.view);
   document.querySelectorAll('[data-v]').forEach(b=>b.setAttribute('aria-selected',b.dataset.v===S.view));
   const admin=isAdmin();
-  $('controls').hidden=!admin||['checks','requests','kpi'].includes(S.view);
+  $('controls').hidden=!admin||['checks','requests','bonus'].includes(S.view);
   document.querySelectorAll('[data-add]').forEach(b=>b.hidden=!admin);
   if(admin){
     $('f-group').hidden=S.view==='teachers';$('f-teacher').hidden=S.view==='teachers';
@@ -812,7 +1073,7 @@ function render(){
     $('f-teacher').innerHTML='<option value="">Все педагоги</option>'+ts.map(t=>`<option>${esc(t)}</option>`).join('');
     if(S.t&&!ts.includes(S.t))S.t='';$('f-teacher').value=S.t;
   }
-  ({next:renderNext,week:renderWeek,month:renderMonth,load:renderLoad,groups:renderGroups,teachers:renderTeachers,checks:renderChecks,requests:renderRequests,kpi:renderKpi})[S.view]();
+  ({next:renderNext,week:renderWeek,month:renderMonth,load:renderLoad,groups:renderGroups,teachers:renderTeachers,checks:renderChecks,requests:renderRequests,bonus:()=>{const a=document.activeElement;if(a&&$('bonus').contains(a)&&/INPUT|SELECT/.test(a.tagName))return;renderBonus()}})[S.view]();
   updateBadges();
   store.set('ps-view-'+SESSION.role,S.view);
   saveState();
@@ -1000,7 +1261,7 @@ async function showLogin(){
   try{const j=await api('people');fill(j);if(!DEMO)store.set('ps-people',JSON.stringify({people:j.people}))}
   catch(e){if(!cached)$('loginerr').textContent=e.message}
 }
-function logout(silent){SESSION=null;store.del('ps-session');store.del('ps-data');if(!silent){$('pw').value='';$('loginerr').textContent=''}showLogin()}
+function logout(silent){SESSION=null;KP=null;BONUS=false;store.del('ps-session');store.del('ps-data');if(!silent){$('pw').value='';$('loginerr').textContent=''}showLogin()}
 async function reload(){const j=await api('data');ingest(j);saveData(j);render()}
 function applyData(r){if(r&&r.data){ingest(r.data);saveData(r.data);render();return true}return false}
 async function after(r){if(!applyData(r))await reload()}
