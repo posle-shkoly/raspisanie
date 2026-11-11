@@ -9,6 +9,12 @@ window.PS_API_URL = "https://script.google.com/macros/s/AKfycbwY6G9BhDunrRijhZWX
 window.PS_KPI = {
   url: "https://claude.ai/artifact/RHQPtYadc2Ebrp7WQ6F1Lt",
   teachers: {
-    // "Иванова Анна": 123,
+    "Анастасия Протасова": 233742,
+    "Анна Ленина": 193871,
+    "Дарина Чупрова": 196162,
+    "Марина Земцовская": 93936,
+    "Надежда Гевель": 204044,
+    "Светлана Залевская": 242159,
+    "Филипп Попов": 178236,
   }
 };
