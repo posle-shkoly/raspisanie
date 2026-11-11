@@ -94,46 +94,53 @@ main .wrap{padding-block:14px 24px}
 .hol-note{font-size:13px;padding:8px 10px;border-radius:9px;background:var(--warn-bg);color:var(--warn);margin-bottom:8px}
 .list{display:flex;flex-direction:column;gap:8px}
 /* премия */
-.bctl{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:-2px 0 12px}
-.bctl select{font-size:14px;padding:8px 10px;border-radius:9px;border:1px solid var(--line);background:var(--surface)}
+.bctl{display:flex;flex-wrap:wrap;gap:8px;align-items:flex-end;margin:-2px 0 14px}
+.bsel{display:flex;flex-direction:column;gap:4px;font-size:12px;color:var(--muted);font-weight:500}
+.bsel select{font-size:14.5px;color:var(--ink);padding:8px 10px;border-radius:9px;border:1px solid var(--line);background:var(--surface);min-width:210px}
 .bctl .sp{flex:1}
 .bname{margin:4px 0 10px;font-family:var(--f-display);font-size:18px}
-.bover{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:8px;margin-bottom:16px}
-.bo{display:flex;flex-direction:column;gap:2px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:10px 12px;min-width:0}
+.bover{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:8px;margin-bottom:18px}
+.bo{display:flex;flex-direction:column;gap:3px;text-align:left;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:11px 13px;min-width:0}
 .bo.cur{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
-.bo .n{font-weight:600}.bo .v{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}.bo .v b{color:var(--ink)}
+.bo .n{font-weight:600;margin-bottom:2px}.bo .v{font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;display:flex;justify-content:space-between;gap:8px}.bo .v b{color:var(--ink)}
 .btable{display:flex;flex-direction:column;gap:6px}
-.bh,.br{display:grid;grid-template-columns:minmax(78px,1fr) minmax(96px,1.3fr) minmax(70px,1fr) minmax(92px,1.2fr);gap:10px;align-items:center}
-.bh{font-size:12px;color:var(--muted);padding:0 12px}
-.br{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 12px;text-align:left;font-size:14px;font-variant-numeric:tabular-nums}
-.br:disabled{cursor:default;opacity:.75}
+.bh,.br{display:grid;grid-template-columns:minmax(90px,1fr) minmax(120px,1.4fr) minmax(110px,1fr);gap:12px;align-items:center}
+.bh{font-size:12px;color:var(--muted);padding:0 13px}
+.br{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:11px 13px;text-align:left;font-size:14px;font-variant-numeric:tabular-nums;min-height:46px}
+.br:disabled{cursor:default;background:transparent}
 .br.cur{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
-.br.total{background:var(--sunk);font-weight:600}
-.br .m{font-weight:600}.br .v{white-space:nowrap}.br .mut,.mut{color:var(--muted)}
-.br .v{display:flex;flex-direction:column;gap:2px}
-.bbar{display:inline-block;vertical-align:middle;width:46px;height:8px;background:var(--sunk);border-radius:4px;overflow:hidden;margin-right:8px}
+.br .m{font-weight:600}.mut{color:var(--muted)}
+.br .sc{display:flex;align-items:center;gap:8px}
+.bbar{display:inline-block;width:56px;height:8px;background:var(--sunk);border-radius:4px;overflow:hidden;flex-shrink:0}
 .bbar i{display:block;height:100%;background:var(--accent)}
-.bst{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--sunk);color:var(--muted);width:max-content}
+.bst{display:inline-block;font-size:11.5px;line-height:1.5;font-weight:600;padding:2px 8px;border-radius:999px;background:var(--sunk);color:var(--muted);white-space:nowrap;font-variant-numeric:tabular-nums;flex-shrink:0}
 .bst.ok{background:var(--ok-bg);color:var(--ok)}.bst.warn{background:var(--warn-bg);color:var(--warn)}.bst.bad{background:var(--bad-bg);color:var(--bad)}
-.bnote{font-size:12.5px;color:var(--muted);margin:8px 2px 0}
-.bgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:12px;margin-bottom:12px}
-.bcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.bhd{display:flex;justify-content:space-between;gap:10px;align-items:baseline}.bhd h3{margin:0;font-size:15.5px}
+.bnote{font-size:12.5px;color:var(--muted);margin:10px 2px 0;max-width:70ch}
+.bgroups{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:12px;margin-bottom:12px}
+.bcard{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px;display:flex;flex-direction:column;gap:12px;min-width:0}
+.bhd{display:flex;justify-content:space-between;gap:12px;align-items:flex-start}.bhd h3{margin:0;font-size:15.5px;line-height:1.3;min-width:0}
 .bled{display:flex;flex-direction:column;font-size:13.5px}
-.bled>div{display:grid;grid-template-columns:1fr auto auto;gap:10px;padding:6px 0;border-bottom:1px solid var(--line)}
-.bled>div:last-child{border-bottom:0}.bled i{font-style:normal;color:var(--muted);font-size:12px}
-.bled b{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right;min-width:42px}
-.bled .mut{text-align:right;overflow-wrap:anywhere}
-.bsub{border-top:1px dashed var(--line);padding-top:10px;display:flex;flex-direction:column;gap:10px}
+.brow{display:grid;grid-template-columns:minmax(0,1fr) auto 52px;gap:10px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)}
+.bled>.brow:last-of-type{border-bottom:0}
+.brow .bn{display:flex;align-items:center;gap:6px;min-width:0;flex-wrap:wrap}
+.brow i{font-style:normal;color:var(--muted);font-size:12px}
+.brow b{font-variant-numeric:tabular-nums;white-space:nowrap;text-align:right}
+.brow .mut{text-align:right;font-variant-numeric:tabular-nums;overflow-wrap:anywhere}
+.qi{width:18px;height:18px;border-radius:50%;border:1px solid var(--line);background:var(--surface);color:var(--muted);font:600 11px/16px var(--f-ui);padding:0;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0}
+.qi[aria-expanded="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btip{font-size:12.5px;line-height:1.45;color:var(--ink);background:var(--sunk);border-radius:8px;padding:8px 10px;margin:2px 0 6px}
+.bsub{border-top:1px dashed var(--line);padding-top:12px;display:flex;flex-direction:column;gap:10px}
 .bsub .lbl{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);font-weight:600}
-.bfields{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.bfields{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px;align-items:end}
+.bfields .fld{font-size:12.5px}
 .bfields .fld input,.bfields .fld select{padding:9px 10px;font-size:14px}
-.chk{display:flex;gap:8px;align-items:center;font-size:13.5px}
+.bfields .fld.wide{grid-column:1/-1}
+.chk{display:flex;gap:8px;align-items:flex-start;font-size:13.5px;line-height:1.35;padding:6px 0}
+.chk input{margin:2px 0 0;flex-shrink:0}
 .bcard details summary{cursor:pointer;font-size:13px;color:var(--muted);margin-bottom:8px}
 .bcalc{background:var(--sunk);border-radius:12px;padding:12px 14px;display:flex;flex-direction:column;gap:4px;font-size:14px;margin-top:12px}
 .bcalc b{font-variant-numeric:tabular-nums}
-.warnline{color:var(--warn);font-size:13px}
-@media (max-width:520px){.bh,.br{grid-template-columns:70px 1fr 1fr;}.bh span:nth-child(3),.br>span:nth-child(3){display:none}}
+@media (max-width:520px){.bh,.br{grid-template-columns:78px 1fr auto;gap:8px}.bsel select{min-width:0}.bgroups{grid-template-columns:1fr}.brow{grid-template-columns:minmax(0,1fr) auto 48px}}
 .empty{color:var(--muted);font-size:14px;padding:22px 12px;text-align:center;background:var(--surface);border-radius:12px;border:1px dashed var(--line)}
 
 /* lesson card — как в CRM: группа, время, метки филиала, дисциплины и педагога */
@@ -825,9 +832,11 @@ function renderRequests(){
   </div>`).join(''):`<div class="empty">${empty}</div>`}</div>`;
 }
 /* ---------- премия педагогов по актёрскому мастерству ----------
-   Данные — с листа «Премия (данные)» через скрипт; баллы и сумма считаются здесь, по регламенту. */
-let KP=null,KPBUSY=false;const KS={sem:null,t:null,m:null};
-const K_PMAX={'1':7000,'2':8500,'3':10000};
+   Данные — с листа «Премия (данные)» через скрипт; баллы и сумма считаются здесь, по регламенту.
+   Премия за полугодие: средний балл месяцев полугодия; 60 баллов — 5 000 ₽, 100 баллов — максимум
+   по числу групп: 1 группа — 7 000 ₽, 2 — 8 500 ₽, 3 и больше — 10 000 ₽. */
+let KP=null,KPBUSY=false;const KS={sem:null,t:null,m:null,tip:null};
+const K_MIN=5000,K_PMAX={'1':7000,'2':8500,'3':10000};
 const kfmt=n=>(Math.round(n*10)/10).toLocaleString('ru-RU');
 const kmoney=n=>Math.round(n).toLocaleString('ru-RU')+' ₽';
 const kpct=(a,b)=>b>0?a/b*100:null;
@@ -836,20 +845,40 @@ const kMonthName=m=>MNOM[+m.slice(5)-1];
 const kSemOf=m=>{const y=+m.slice(0,4),mo=+m.slice(5);return mo>=9?`${y}-09`:mo<=5?`${y}-01`:null};
 const kSemMonths=s=>{const y=s.slice(0,4);return s.endsWith('-09')?['09','10','11','12'].map(x=>`${y}-${x}`):['01','02','03','04','05'].map(x=>`${y}-${x}`)};
 const kSemLabel=s=>s.endsWith('-09')?`Сентябрь–декабрь ${s.slice(0,4)}`:`Январь–май ${s.slice(0,4)}`;
+const kPmax=c=>{const k=String(Math.min(3,Math.max(1,c)));return +((KP&&KP.pmax)||K_PMAX)[k]||K_PMAX[k]};
 function kv(crm,man,k){const o=(man.ov||{})[k];return o!==undefined&&o!==null&&o!==''?+o:(crm[k]??0)}
+/* описание критериев — по кнопке «?» */
+const K_TIPS={
+  'Удержание':'Сколько учеников, занимавшихся в конце прошлого месяца, остались до конца этого. Для сентября берётся состав на конец мая. 95% и выше — 15, 90–94% — 10, 85–89% — 5, ниже — 0.',
+  'Прирост':'Стало = было − ушли + пришли. Прирост = (стало − было) / было. Обычный месяц: от +5% — 10, +3–4% — 7, +1–2% — 4. Сентябрь и январь: от +15% — 10, +10–14% — 7, +5–9% — 4. Заполненная группа без потерь — 10.',
+  'Посещаемость':'Отметки «был» к числу записей на проведённые занятия, без пробных. 85% и выше — 10, 75–84% — 6, 65–74% — 3.',
+  'Пробные':'Сколько детей после пробного купили абонемент в эту группу. От 60% — 5, 40–59% — 3. Пробных не было — 3.',
+  'Видео':'Ролики с занятий за месяц в общей папке: 2 и больше — 5, один — 2.',
+  'Мероприятия':'Открытый урок — 5, спектакль или показ — 10, конкурс — 10, призовое место — ещё 5. Не больше 15 за месяц.',
+  'Программа':'Доля тем месяца, пройденных по плану: 100% — 5, 90–99% — 3.',
+  'Оценка родителей':'Средняя оценка в анкете: 4,7 и выше — 10, 4,5–4,69 — 7, 4,0–4,49 — 4. Если ответили меньше 30% родителей — не больше 5.',
+  'Чат с родителями':'Посты в чате группы за месяц: 4 и больше — 5, 2–3 — 2.',
+  'Отчёт за месяц':'Отчёт до 3-го числа, полностью — 10; с опозданием до 2 дней — 5; позже — 0.',
+  'Нет жалоб':'Нет обоснованных жалоб родителей — 5.',
+  'Развитие и вклад':'Курс или семинар, новая разработка, ученик по рекомендации, помощь общему спектаклю — 5.',
+  'Мероприятия за полугодие':'2 мероприятия, из них хотя бы один сценический показ — 5; 3 и больше — 8.',
+  'Удержание за полугодие':'Состав на начало полугодия, который дошёл до конца: от 85% — 4.',
+  'Рост учеников':'Диагностика: у 70% учеников рост хотя бы по 2 критериям — 3.'
+};
 
 function kScoreGroup(crm,man,month){
   const mon=+month.slice(5),rec=mon===9||mon===1;
   const start=kv(crm,man,'start'),end=kv(crm,man,'end'),stayed=kv(crm,man,'stayed'),cap=kv(crm,man,'maxStudents');
+  const left=Math.max(0,start-stayed),came=Math.max(0,end-stayed);
   const planned=kv(crm,man,'planned'),pres=kv(crm,man,'presences'),tc=kv(crm,man,'trialsCame'),tb=kv(crm,man,'trialsBought');
   const rows=[];const add=(name,val,p,max,note)=>rows.push({name,val,p,max,note});
   if(man.midMonth){add('Удержание','группу взяли в середине месяца',15,15);add('Прирост','не считается',10,10)}
   else{
     const R=kpct(stayed,start);
-    add('Удержание',R===null?'в начале месяца никого':`${stayed} из ${start} · ${kfmt(R)}%`,R===null?15:R>=95?15:R>=90?10:R>=85?5:0,15);
+    add('Удержание',R===null?'в начале никого':`${stayed} из ${start} · ${kfmt(R)}%`,R===null?15:R>=95?15:R>=90?10:R>=85?5:0,15);
     const G=kpct(end-start,start),full=cap>0&&end>=cap&&stayed===start;
     let g2;if(full)g2=10;else if(G===null)g2=end>0?10:0;else g2=rec?(G>=15?10:G>=10?7:G>=5?4:0):(G>=5?10:G>=3?7:G>0?4:0);
-    add('Прирост',G===null?`${end} учеников`:`${start} → ${end} · ${G>0?'+':''}${kfmt(G)}%`+(rec?' (месяц набора)':''),g2,10,full?'группа заполнена':'');
+    add('Прирост',`${start} − ${left} + ${came} = ${end}`+(G===null?'':` · ${G>0?'+':''}${kfmt(G)}%`),g2,10,full?'группа заполнена':'');
   }
   const P=kpct(pres,planned);
   add('Посещаемость',P===null?'нет занятий':`${pres} из ${planned} · ${kfmt(P)}%`,P===null?0:P>=85?10:P>=75?6:P>=65?3:0,10);
@@ -863,16 +892,15 @@ function kScoreGroup(crm,man,month){
   const pa=man.parentAvg==null?null:+man.parentAvg,pr=+man.parentResp||0;
   let g8=pa===null?0:pa>=4.7?10:pa>=4.5?7:pa>=4?4:0;if(pa!==null&&pr<30)g8=Math.min(g8,5);
   add('Оценка родителей',pa===null?'ждёт анкеты':`${String(pa).replace('.',',')} · ответили ${pr}%`,g8,10,pa!==null&&pr<30?'меньше 30% ответов':'');
-  const posts=+man.posts||0;add('Чат с родителями',man.posts==null?'не указано':`${posts} пост.`,posts>=4?5:posts>=2?2:0,5);
+  const posts=+man.posts||0;add('Чат с родителями',man.posts==null?'не указано':`${posts}`,posts>=4?5:posts>=2?2:0,5);
   const total=rows.reduce((s,r)=>s+r.p,0);
-  const missing=[];if(prog===null)missing.push('программа');if(man.videos==null)missing.push('видео');if(man.posts==null)missing.push('посты');if(pa===null)missing.push('анкета');
   let sem=null;
   if(mon===12||mon===5){
     const sEv=+man.semEvents||0,s0=kv(crm,man,'semStart'),s1=kv(crm,man,'semStayed'),SR=kpct(s1,s0);
     const e=sEv>=3?8:(sEv>=2&&man.semShow)?5:0,r=SR!==null&&SR>=85?4:0,g=man.semGrowth?3:0;
-    sem={total:e+r+g,rows:[{name:'Мероприятия за полугодие',val:`${sEv}${man.semShow?', есть показ':''}`,p:e,max:8},{name:'Удержание за полугодие',val:SR===null?'нет данных':`${s1} из ${s0} · ${kfmt(SR)}%`,p:r,max:4},{name:'Рост учеников',val:man.semGrowth?'у 70% и больше':'нет',p:g,max:3}]};
+    sem={total:e+r+g,rows:[{name:'Мероприятия за полугодие',val:`${sEv}${man.semShow?', есть показ':''}`,p:e,max:8},{name:'Удержание за полугодие',val:SR===null?'нет данных':`${s1} из ${s0} · ${kfmt(SR)}%`,p:r,max:4},{name:'Рост учеников',val:man.semGrowth?'да':'нет',p:g,max:3}]};
   }
-  return {rows,total,n:end,missing,sem,confirmed:!!man.confirmed};
+  return {rows,total,n:end,sem,confirmed:!!man.confirmed};
 }
 function kScoreTeacher(tid,month){
   const md=KP.months.find(x=>x.month===month);if(!md)return null;
@@ -884,28 +912,21 @@ function kScoreTeacher(tid,month){
   const grp=wavg(s=>s.total),sem=res.some(x=>x.s.sem)?wavg(s=>s.sem?s.sem.total:0):0;
   const l1=T.report==='ontime'?10:T.report==='late'?5:0,l2=(+T.complaints||0)===0?5:0,l3=T.dev?5:0,pers=l1+l2+l3,penalty=(+T.missed||0)*10;
   const B=Math.max(0,Math.min(100,Math.round(grp+pers+sem-penalty)));
-  const weak=res.some(x=>x.s.total<40),cnt=Math.min(3,Math.max(1,res.length));
-  const pmax=+((KP.pmax||K_PMAX)[cnt])||K_PMAX[cnt];
-  let prem=0,why='';
-  if(T.sick)why='болезнь больше половины месяца';
-  else if(T.isNew){prem=T.report&&T.report!=='missing'?5000:0;why='первый месяц — фиксированно'}
-  else if(B>=60){prem=5000+(pmax-5000)*(B-60)/40;if(weak)prem*=0.9;prem=Math.floor(prem/100)*100}
-  else why='меньше 60 баллов';
-  const missing=res.flatMap(x=>x.s.missing.map(m=>`${x.g.name}: ${m}`));if(!T.report)missing.push('отчёт не отмечен');
-  return {res,N,grp,sem,l1,l2,l3,pers,penalty,B,weak,pmax,prem,why,missing,T,confirmed:res.every(x=>x.s.confirmed)};
+  return {res,N,grp,sem,l1,l2,l3,pers,penalty,B,T,skip:!!(T.sick||T.isNew),confirmed:res.every(x=>x.s.confirmed)};
 }
-/* полугодие по месяцам: план — максимум премии при этом числе групп, факт — расчёт */
+/* полугодие: средний балл засчитанных месяцев → премия; группа со средним ниже 40 — × 0,9 */
 function kSemester(tid,sem){
   const now=iso(new Date()).slice(0,7);
-  let lastCnt=0;
-  const rows=kSemMonths(sem).map(m=>{
-    const r=kScoreTeacher(tid,m);
-    if(r){lastCnt=Math.min(3,r.res.length);return {m,r,plan:r.pmax,fact:r.prem,state:m<now?(r.confirmed?'done':'check'):'now'}}
-    return {m,r:null,plan:m>=now&&lastCnt?(+(KP.pmax||K_PMAX)[lastCnt]||K_PMAX[lastCnt]):0,fact:0,state:m>now?'future':'none'};
-  });
-  const plan=rows.reduce((a,x)=>a+x.plan,0),fact=rows.reduce((a,x)=>a+x.fact,0);
-  const done=rows.filter(x=>x.r);const avgB=done.length?done.reduce((a,x)=>a+x.r.B,0)/done.length:0;
-  return {rows,plan,fact,avgB};
+  const rows=kSemMonths(sem).map(m=>{const r=kScoreTeacher(tid,m);return {m,r,state:!r?(m>now?'future':'none'):r.skip?'skip':m<now?(r.confirmed?'done':'check'):'now'}});
+  const used=rows.filter(x=>x.r&&!x.r.skip);
+  const avgB=used.length?used.reduce((a,x)=>a+x.r.B,0)/used.length:0;
+  const gs={};used.forEach(x=>x.r.res.forEach(y=>{(gs[y.g.id]=gs[y.g.id]||{name:y.g.name,s:[]}).s.push(y.s.total)}));
+  const weak=Object.values(gs).filter(g=>g.s.reduce((a,b)=>a+b,0)/g.s.length<40).map(g=>g.name);
+  /* число групп за полугодие — среднее по засчитанным месяцам, с округлением */
+  const groups=used.length?Math.round(used.reduce((a,x)=>a+x.r.res.length,0)/used.length):0;
+  const max=kPmax(groups||1);let prem=0;
+  if(used.length&&avgB>=60){prem=K_MIN+(max-K_MIN)*(Math.min(avgB,100)-60)/40;if(weak.length)prem*=0.9;prem=Math.floor(prem/100)*100}
+  return {rows,used:used.length,avgB,prem,weak,groups,max};
 }
 
 async function loadKpi(force){
@@ -914,25 +935,27 @@ async function loadKpi(force){
   try{const j=await api('kpi');KP=j.kpi}catch(e){$('bonus').innerHTML=`<div class="empty">${esc(e.message)}</div>`;KPBUSY=false;return}
   KPBUSY=false;renderBonus();
 }
-function kTeachers(){ // [{id,name}] — у администратора все с премией, у педагога он сам
+function kTeachers(){ // у администратора все с премией, у педагога он сам
   if(!KP)return[];
   if(!isAdmin())return KP.me?[{id:KP.me,name:SESSION.name}]:[];
   return Object.entries(KP.map||{}).map(([n,id])=>({id:+id,name:n})).sort((a,b)=>a.name.localeCompare(b.name,'ru'));
+}
+function kSems(){
+  const months=KP.months.map(x=>x.month);
+  const cur=kSemOf(iso(new Date()).slice(0,7))||kSemOf(months[months.length-1]||'2026-09');
+  return uniq([...months.map(kSemOf).filter(Boolean),cur].filter(Boolean)).sort().reverse();
 }
 function renderBonus(){
   const box=$('bonus');
   if(!KP){loadKpi();return}
   if(KP.none){box.innerHTML='<div class="empty">Премия для вас пока не настроена.</div>';return}
-  const admin=isAdmin(),ts=kTeachers(),months=KP.months.map(x=>x.month);
-  const sems=uniq(months.map(kSemOf).filter(Boolean)).sort();
-  const curSem=kSemOf(iso(new Date()).slice(0,7));if(curSem&&!sems.includes(curSem))sems.push(curSem);
-  if(!KS.sem||!sems.includes(KS.sem))KS.sem=sems.includes(curSem)?curSem:sems[sems.length-1];
+  const admin=isAdmin(),ts=kTeachers(),sems=kSems();
+  if(!KS.sem||!sems.includes(KS.sem))KS.sem=sems[0];
   if(!KS.t||!ts.some(t=>t.id===KS.t))KS.t=ts[0]?ts[0].id:null;
-  const semMonths=kSemMonths(KS.sem||curSem);
-  const withData=semMonths.filter(m=>months.includes(m)&&KS.t&&kScoreTeacher(KS.t,m));
+  const withData=kSemMonths(KS.sem).filter(m=>KS.t&&kScoreTeacher(KS.t,m));
   if(!KS.m||!withData.includes(KS.m))KS.m=withData[withData.length-1]||null;
-  let h=`<div class="sechead"><h2>${admin?'Премия педагогов':'Моя премия'}</h2><span>актёрское мастерство</span></div>`;
-  h+=`<div class="bctl">${sems.length>1?`<select id="b-sem" aria-label="Полугодие">${sems.map(s=>`<option value="${s}"${s===KS.sem?' selected':''}>${kSemLabel(s)}</option>`).join('')}</select>`:`<b>${kSemLabel(KS.sem||curSem)}</b>`}
+  let h=`<div class="sechead"><h2>${admin?'Премия педагогов':'Моя премия'}</h2><span>актёрское мастерство</span></div>
+    <div class="bctl"><label class="bsel"><span>Полугодие</span><select id="b-sem">${sems.map(s=>`<option value="${s}"${s===KS.sem?' selected':''}>${kSemLabel(s)}</option>`).join('')}</select></label>
     ${admin?`<span class="sp"></span><button class="btn sm ghost" id="b-sync">Обновить из CRM</button><button class="btn sm ghost" id="b-cfg">Настройки</button>`:''}</div>`;
   if(admin&&!KP.hasKey)h+=`<div class="banner">Не задан ключ API «Мой класс». Откройте «Настройки», чтобы данные обновлялись сами каждый день.</div>`;
   if(admin)h+=kAdminOverview(ts);
@@ -940,63 +963,62 @@ function renderBonus(){
   const tname=(ts.find(t=>t.id===KS.t)||{}).name||'';
   const S2=kSemester(KS.t,KS.sem);
   h+=`${admin?`<h3 class="bname">${esc(tname)}</h3>`:''}
-    <div class="tiles"><div class="tile"><b>${kmoney(S2.fact)}</b><span>начислено за полугодие</span></div><div class="tile"><b>${kmoney(S2.plan)}</b><span>максимум (план)</span></div>
-    <div class="tile wide"><b>${S2.avgB?kfmt(S2.avgB)+' баллов в среднем':'баллов пока нет'}</b><span>премия начисляется от 60 баллов из 100</span></div></div>
-    <div class="btable"><div class="bh"><span>Месяц</span><span>Баллы</span><span>План</span><span>Факт</span></div>
+    <div class="tiles"><div class="tile"><b>${S2.used?kfmt(S2.avgB):'—'}</b><span>средний балл за полугодие</span></div>
+    <div class="tile"><b>${kmoney(S2.prem)}</b><span>премия на сегодня</span></div>
+    <div class="tile wide"><span>${S2.groups?`Групп: ${S2.groups}, максимум за полугодие ${kmoney(S2.max)}. `:''}${S2.avgB>=60?`Расчёт: ${kmoney(K_MIN)} + (${kmoney(S2.max)} − ${kmoney(K_MIN)}) × (${kfmt(S2.avgB)} − 60) / 40${S2.weak.length?' × 0,9':''}`:`Премия начисляется от 60 баллов: 60 — ${kmoney(K_MIN)}, 100 — ${kmoney(S2.max)}.${S2.used?` Сейчас средний балл ${kfmt(S2.avgB)}.`:''}`}${S2.weak.length?`<br>Группа ниже 40 баллов за полугодие: ${esc(S2.weak.join(', '))} — премия × 0,9.`:''}</span></div></div>
+    <div class="btable" role="table"><div class="bh" role="row"><span>Месяц</span><span>Баллы</span><span>Статус</span></div>
     ${S2.rows.map(x=>`<button class="br${x.m===KS.m?' cur':''}" data-bm="${x.m}"${x.r?'':' disabled'}><span class="m">${kMonthName(x.m)}</span>
-      <span>${x.r?`<i class="bbar"><i style="width:${x.r.B}%"></i></i><b>${x.r.B}</b>`:'<span class="mut">—</span>'}</span>
-      <span class="v">${x.plan?kmoney(x.plan):'—'}</span><span class="v"><b>${x.r?kmoney(x.fact):'—'}</b>${kState(x)}</span></button>`).join('')}
-    <div class="br total"><span class="m">Итого</span><span></span><span class="v">${kmoney(S2.plan)}</span><span class="v"><b>${kmoney(S2.fact)}</b></span></div></div>
-    <p class="bnote">План — наибольшая премия при вашем числе групп (100 баллов). Факт — расчёт по регламенту: 5 000 ₽ при 60 баллах и дальше пропорционально. Данные текущего месяца предварительные.</p>`;
+      <span class="sc">${x.r?`<i class="bbar"><i style="width:${x.r.B}%"></i></i><b>${x.r.B}</b>`:'<span class="mut">—</span>'}</span>
+      <span>${kState(x)}</span></button>`).join('')}</div>
+    <p class="bnote">Премия за полугодие — за все группы вместе: от 5 000 ₽ при 60 баллах до 7 000 ₽ (1 группа), 8 500 ₽ (2 группы) или 10 000 ₽ (3 и больше) при 100 баллах. Считается по среднему баллу месяцев; цифры текущего месяца предварительные.</p>`;
   if(KS.m)h+=kMonthDetail(KS.t,KS.m);
   box.innerHTML=h;
 }
 function kState(x){
-  if(x.state==='done')return '<span class="bst ok">проверено</span>';
-  if(x.state==='check')return '<span class="bst">ждёт проверки</span>';
-  if(x.state==='now')return '<span class="bst warn">идёт</span>';
-  return '';
+  return {done:'<span class="bst ok">проверено</span>',check:'<span class="bst">ждёт проверки</span>',now:'<span class="bst warn">идёт</span>',skip:'<span class="bst">не учитывается</span>',future:'<span class="mut">впереди</span>',none:'<span class="mut">нет данных</span>'}[x.state]||'';
 }
 function kAdminOverview(ts){
   if(!ts.length)return '';
-  const m=KS.m;
-  return `<div class="bover">${ts.map(t=>{const S2=kSemester(t.id,KS.sem);const r=m?kScoreTeacher(t.id,m):null;
-    return `<button class="bo${t.id===KS.t?' cur':''}" data-bt="${t.id}"><span class="n">${esc(t.name)}</span><span class="v">${r?`${kMonthName(m)}: <b>${r.B}</b> · ${kmoney(r.prem)}`:'—'}</span><span class="v">за полугодие <b>${kmoney(S2.fact)}</b></span></button>`}).join('')}</div>`;
+  return `<div class="bover">${ts.map(t=>{const S2=kSemester(t.id,KS.sem);
+    return `<button class="bo${t.id===KS.t?' cur':''}" data-bt="${t.id}"><span class="n">${esc(t.name)}</span>
+      <span class="v">Средний балл <b>${S2.used?kfmt(S2.avgB):'—'}</b></span><span class="v">Премия <b>${kmoney(S2.prem)}</b></span></button>`}).join('')}</div>`;
 }
-const K_TF=[['videos','Видео с занятий'],['program','Пройдено программы, %'],['posts','Постов в чате группы'],['open','Открытых уроков'],['shows','Спектаклей, показов'],['contests','Конкурсов'],['prizes','Призовых мест']];
+const K_TF=[['videos','Видео с занятий'],['program','Пройдено программы, %'],['posts','Постов в чате'],['open','Открытых уроков'],['shows','Спектаклей, показов'],['contests','Конкурсов'],['prizes','Призовых мест']];
 function kInp(id,val,can,step){return `<input id="${id}" class="bin" inputmode="${step?'decimal':'numeric'}" autocomplete="off" value="${esc(val==null?'':String(val).replace('.',','))}"${can?'':' disabled'}>`}
 function kChk(id,val,can){return `<input id="${id}" type="checkbox"${val?' checked':''}${can?'':' disabled'}>`}
+function kRow(x,key){
+  const open=KS.tip===key,tip=K_TIPS[x.name];
+  return `<div class="brow"><span class="bn">${x.name}${tip?`<button class="qi" data-tip="${esc(key)}" aria-label="Что это: ${esc(x.name)}" aria-expanded="${open}">?</button>`:''}${x.note?` <i>${esc(x.note)}</i>`:''}</span><span class="mut">${esc(x.val)}</span><b>${x.p}<i>/${x.max}</i></b></div>${open&&tip?`<div class="btip">${esc(tip)}</div>`:''}`;
+}
 function kMonthDetail(tid,m){
   const r=kScoreTeacher(tid,m);if(!r)return '';
   const admin=isAdmin(),T=r.T,tp=`bt|${m}|${tid}`;
-  let h=`<div class="sechead" style="margin-top:22px"><h2>${kMonthName(m)}</h2><span>${r.B} баллов · ${kmoney(r.prem)}</span></div><div class="bgroups">`;
+  let h=`<div class="sechead" style="margin-top:22px"><h2>${kMonthName(m)}</h2><span>${r.B} баллов из 100</span></div><div class="bgroups">`;
   for(const {g,man,s} of r.res){
     const canT=!man.confirmed||admin,gp=`bg|${m}|${g.id}`;
     h+=`<div class="bcard"><div class="bhd"><h3>${esc(g.name)}</h3><span class="bst ${s.total<40?'bad':s.total>=60?'ok':''}">${s.total} / 80</span></div>
-      <div class="bled">${s.rows.map(x=>`<div><span>${x.name}${x.note?` <i>${esc(x.note)}</i>`:''}</span><span class="mut">${esc(x.val)}</span><b>${x.p}<i>/${x.max}</i></b></div>`).join('')}</div>
+      <div class="bled">${s.rows.map(x=>kRow(x,`${g.id}|${x.name}`)).join('')}</div>
       <div class="bsub"><div class="lbl">${man.confirmed?'Проверено руководителем':'Вносит педагог'}</div><div class="bfields">
       ${K_TF.map(([k,l])=>`<label class="fld">${l}${kInp(`${gp}|${k}`,man[k],canT)}</label>`).join('')}</div>
-      ${s.sem?`<div class="lbl">Полугодие: +${s.sem.total} из 15</div><div class="bfields"><label class="fld">Мероприятий за полугодие${kInp(`${gp}|semEvents`,man.semEvents,canT)}</label>
-        <label class="chk">${kChk(`${gp}|semShow`,man.semShow,canT)} Был сценический показ</label><label class="chk">${kChk(`${gp}|semGrowth`,man.semGrowth,canT)} Рост у 70% учеников по 2 критериям</label></div>`:''}
+      ${s.sem?`<div class="lbl">Полугодие: +${s.sem.total} из 15</div><div class="bled">${s.sem.rows.map(x=>kRow(x,`${g.id}|${x.name}`)).join('')}</div>
+        <div class="bfields"><label class="fld">Мероприятий за полугодие${kInp(`${gp}|semEvents`,man.semEvents,canT)}</label>
+        <label class="chk">${kChk(`${gp}|semShow`,man.semShow,canT)}<span>Был сценический показ</span></label><label class="chk">${kChk(`${gp}|semGrowth`,man.semGrowth,canT)}<span>Рост у 70% учеников</span></label></div>`:''}
       ${admin?`<div class="lbl">Вносит руководитель</div><div class="bfields"><label class="fld">Анкета: средняя оценка${kInp(`${gp}|parentAvg`,man.parentAvg,true,1)}</label><label class="fld">Ответили родителей, %${kInp(`${gp}|parentResp`,man.parentResp,true)}</label>
-        <label class="chk">${kChk(`${gp}|midMonth`,man.midMonth,true)} Группу взяли в середине месяца</label><label class="chk">${kChk(`${gp}|confirmed`,man.confirmed,true)} Данные группы проверены</label></div>
-        <details><summary>Поправить цифры из CRM</summary><div class="bfields">${[['start','На начало месяца'],['end','На конец месяца'],['stayed','Остались'],['planned','Записей на занятия'],['presences','Присутствий'],['trialsCame','Пришли на пробное'],['trialsBought','Купили после пробного']].map(([k,l])=>`<label class="fld">${l} (CRM: ${g[k]??'—'})${kInp(`${gp}|ov.${k}`,(man.ov||{})[k],true)}</label>`).join('')}</div></details>`:''}
+        <label class="chk">${kChk(`${gp}|midMonth`,man.midMonth,true)}<span>Группу взяли в середине месяца</span></label><label class="chk">${kChk(`${gp}|confirmed`,man.confirmed,true)}<span>Данные группы проверены</span></label></div>
+        <details><summary>Поправить цифры из CRM</summary><div class="bfields">${[['start','Было в начале'],['stayed','Остались'],['end','Стало в конце'],['planned','Записей на занятия'],['presences','Присутствий'],['trialsCame','Пришли на пробное'],['trialsBought','Купили после пробного']].map(([k,l])=>`<label class="fld">${l} (CRM: ${g[k]??'—'})${kInp(`${gp}|ov.${k}`,(man.ov||{})[k],true)}</label>`).join('')}</div></details>`:''}
       </div></div>`;
   }
+  const pr=[{name:'Отчёт за месяц',val:{ontime:'вовремя',late:'с опозданием',missing:'не сдан'}[T.report]||'не отмечен',p:r.l1,max:10},{name:'Нет жалоб',val:`жалоб: ${+T.complaints||0}`,p:r.l2,max:5},{name:'Развитие и вклад',val:T.devNote||'—',p:r.l3,max:5}];
   h+=`</div><div class="bcard"><div class="bhd"><h3>Личные показатели</h3><span class="bst">${r.pers} / 20</span></div>
-    <div class="bled"><div><span>Отчёт за месяц</span><span class="mut">${{ontime:'вовремя',late:'с опозданием',missing:'не сдан'}[T.report]||'не отмечен'}</span><b>${r.l1}<i>/10</i></b></div>
-    <div><span>Нет жалоб</span><span class="mut">${+T.complaints||0} жалоб</span><b>${r.l2}<i>/5</i></b></div><div><span>Развитие и вклад</span><span class="mut">${esc(T.devNote||'—')}</span><b>${r.l3}<i>/5</i></b></div>
-    ${r.penalty?`<div><span>Сорванные занятия</span><span class="mut">${T.missed}</span><b>−${r.penalty}</b></div>`:''}</div>
-    <div class="bsub"><div class="bfields"><label class="fld" style="grid-column:1/-1">Развитие за месяц: курс, разработка, помощь студии<input id="${tp}|devNote" class="btxt" value="${esc(T.devNote||'')}" maxlength="300"${!r.confirmed||admin?'':' disabled'}></label>
+    <div class="bled">${pr.map(x=>kRow(x,`t|${x.name}`)).join('')}${r.penalty?`<div class="brow"><span class="bn">Сорванные занятия</span><span class="mut">${T.missed}</span><b>−${r.penalty}</b></div>`:''}</div>
+    <div class="bsub"><div class="bfields"><label class="fld wide">Развитие за месяц: курс, разработка, помощь студии<input id="${tp}|devNote" class="btxt" value="${esc(T.devNote||'')}" maxlength="300"${!r.confirmed||admin?'':' disabled'}></label>
     ${admin?`<label class="fld">Отчёт<select id="${tp}|report">${[['','не отмечен'],['ontime','вовремя — 10'],['late','с опозданием — 5'],['missing','не сдан — 0']].map(([k,l])=>`<option value="${k}"${(T.report||'')===k?' selected':''}>${l}</option>`).join('')}</select></label>
       <label class="fld">Обоснованных жалоб${kInp(`${tp}|complaints`,T.complaints,true)}</label><label class="fld">Сорвано занятий${kInp(`${tp}|missed`,T.missed,true)}</label>
-      <label class="chk">${kChk(`${tp}|dev`,T.dev,true)} Развитие засчитано</label><label class="chk">${kChk(`${tp}|isNew`,T.isNew,true)} Первый месяц работы</label><label class="chk">${kChk(`${tp}|sick`,T.sick,true)} Болел больше половины месяца</label>`:''}</div></div></div>`;
+      <label class="chk">${kChk(`${tp}|dev`,T.dev,true)}<span>Развитие засчитано</span></label><label class="chk">${kChk(`${tp}|isNew`,T.isNew,true)}<span>Первый месяц работы</span></label><label class="chk">${kChk(`${tp}|sick`,T.sick,true)}<span>Болел больше половины месяца</span></label>`:''}</div></div></div>`;
   const parts=r.res.map(x=>`${x.s.total} × ${x.s.n}`).join(' + ');
-  h+=`<div class="bcalc"><div>Групповой балл: ${r.res.length>1?`(${parts}) / ${r.N} = `:''}<b>${kfmt(r.grp)}</b></div>
+  h+=`<div class="bcalc"><div>Групповой балл${r.res.length>1?` (с учётом числа учеников): (${parts}) / ${r.N}`:''} = <b>${kfmt(r.grp)}</b></div>
     <div>Личные: <b>${r.pers}</b>${r.sem?` · полугодие: <b>+${kfmt(r.sem)}</b>`:''}${r.penalty?` · сорванные занятия: <b>−${r.penalty}</b>`:''}</div>
-    <div>Итог: <b>${r.B}</b> из 100${r.weak?' · есть группа ниже 40 баллов → × 0,9':''}</div>
-    <div>Премия: ${r.prem||!r.why?`5 000 + (${r.pmax.toLocaleString('ru-RU')} − 5 000) × (${r.B} − 60) / 40${r.weak?' × 0,9':''} = <b>${kmoney(r.prem)}</b>`:esc(r.why)+' — <b>0 ₽</b>'}</div>
-    ${r.missing.length?`<div class="warnline">Не хватает: ${esc(r.missing.join('; '))}</div>`:''}</div>`;
+    <div>Итог месяца: <b>${r.B}</b> из 100${r.skip?' · в премию не учитывается':''}</div></div>`;
   return h;
 }
 async function kSave(id,val){
@@ -1010,6 +1032,7 @@ async function kSave(id,val){
 async function kSync(){
   const now=iso(new Date()).slice(0,7);
   const ms=kSemMonths(KS.sem).filter(m=>m<=now);
+  if(!ms.length){toast('Это полугодие ещё не началось');return}
   const b=$('b-sync');if(b){b.disabled=true;b.textContent='Обновляю…'}
   try{const j=await api('kpiSync',{months:ms});KP=j.kpi;renderBonus();toast(`Обновлено из CRM: ${j.synced.map(x=>kMonthName(x.month)).join(', ')}`)}
   catch(e){toast(e.message);if(b){b.disabled=false;b.textContent='Обновить из CRM'}}
@@ -1017,12 +1040,12 @@ async function kSync(){
 function kOpenCfg(){
   const crm=new Map();KP.months.forEach(md=>md.teachers.forEach(t=>crm.set(t.id,t.name)));
   const list=[...crm].sort((a,b)=>a[1].localeCompare(b[1],'ru'));
-  const pm=KP.pmax||K_PMAX;
+  const pm=(KP&&KP.pmax)||K_PMAX;
   openModal(`<h2>Настройки премии</h2>
     <div class="sub">Кто из педагогов получает премию и кто он в «Мой класс». Остальные (танец, вокал) — без премии.</div>
     ${(KP.siteTeachers||[]).map(n=>`<label class="fld">${esc(n)}<select data-map="${esc(n)}"><option value="">без премии</option>${list.map(([id,nm])=>`<option value="${id}"${+(KP.map||{})[n]===id?' selected':''}>${esc(nm)}</option>`).join('')}</select></label>`).join('')}
-    <div class="sub">Максимальная премия, ₽</div>
-    <div class="bfields">${['1','2','3'].map(k=>`<label class="fld">${k==='3'?'3 группы и больше':k==='1'?'1 группа':'2 группы'}<input data-pmax="${k}" inputmode="numeric" value="${pm[k]}"></label>`).join('')}</div>
+    <div class="sub">Максимальная премия за полугодие (100 баллов), ₽. При 60 баллах — 5 000 ₽.</div>
+    <div class="bfields">${['1','2','3'].map(k=>`<label class="fld">${k==='1'?'1 группа':k==='2'?'2 группы':'3 группы и больше'}<input data-pmax="${k}" inputmode="numeric" value="${pm[k]}"></label>`).join('')}</div>
     <div class="row"><button class="btn ghost" data-close>Отмена</button><button class="btn" id="b-cfg-save">Сохранить</button></div>
     <div class="sub" style="margin-top:8px">Ключ API «Мой класс» (Настройки → Интеграции → API). ${KP.hasKey?'Ключ уже сохранён; введите новый, чтобы заменить.':'Пока не задан.'} Хранится в настройках скрипта, в таблице его не видно.</div>
     <label class="fld">Ключ API<input id="b-key" type="password" autocomplete="off" placeholder="${KP.hasKey?'••••••••':''}"></label>
@@ -1050,8 +1073,9 @@ document.addEventListener('change',e=>{
   kSave(t.id,val);
 });
 document.addEventListener('click',e=>{
-  const bm=e.target.closest('[data-bm]');if(bm){KS.m=bm.dataset.bm;renderBonus();return}
-  const bt=e.target.closest('[data-bt]');if(bt){KS.t=+bt.dataset.bt;renderBonus();return}
+  const q=e.target.closest('[data-tip]');if(q){KS.tip=KS.tip===q.dataset.tip?null:q.dataset.tip;renderBonus();return}
+  const bm=e.target.closest('[data-bm]');if(bm){KS.m=bm.dataset.bm;KS.tip=null;renderBonus();return}
+  const bt=e.target.closest('[data-bt]');if(bt){KS.t=+bt.dataset.bt;KS.tip=null;renderBonus();return}
   if(e.target.id==='b-sync'){kSync();return}
   if(e.target.id==='b-cfg'){kOpenCfg();return}
   if(e.target.id==='b-cfg-save'){kSaveCfg();return}
